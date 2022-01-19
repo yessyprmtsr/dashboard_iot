@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStatusIotsTable extends Migration
+class CreateKetinggianAirTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateStatusIotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('status_iot', function (Blueprint $table) {
+         Schema::create('ketinggian_air', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('sensor_id');
+            $table->integer('debit_ketinggian_air');
             $table->string('status');
-             $table->string('jenis');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +30,6 @@ class CreateStatusIotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_iots');
+        Schema::dropIfExists('ketinggian_air');
     }
 }

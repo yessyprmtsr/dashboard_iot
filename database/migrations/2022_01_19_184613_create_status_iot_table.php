@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpillwaysTable extends Migration
+class CreateStatusIotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSpillwaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('spillway', function (Blueprint $table) {
+        Schema::create('status_iot', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('spillway_id');
-            $table->string('kondisi');
+            $table->string('name');
             $table->string('status');
+             $table->string('jenis');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateSpillwaysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spillways');
+        Schema::dropIfExists('status_iot');
     }
 }

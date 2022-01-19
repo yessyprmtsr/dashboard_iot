@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKetinggianAirsTable extends Migration
+class CreateSpillwayTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateKetinggianAirsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ketinggian_air', function (Blueprint $table) {
+        Schema::create('spillway', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sensor_id');
-            $table->integer('debit_ketinggian_air');
+            $table->unsignedBigInteger('spillway_id');
+            $table->string('kondisi');
             $table->string('status');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateKetinggianAirsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ketinggian_airs');
+        Schema::dropIfExists('spillway');
     }
 }

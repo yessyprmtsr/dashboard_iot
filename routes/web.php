@@ -21,5 +21,13 @@ Route::get('/',  [App\Http\Controllers\HomeController::class, 'index'])->name('h
 //ketinggian air routes
 Route::get('/ketinggian-air',  [App\Http\Controllers\KetinggianAirController::class, 'index']);
 
-//ketinggian air routes
+//spillway
 Route::get('/spillway',  [App\Http\Controllers\SpillwayController::class, 'index']);
+
+//status iot
+Route::get('/status-iot',  [App\Http\Controllers\StatusIotController::class, 'index']);
+Route::get('/status-iot/create',  [App\Http\Controllers\StatusIotController::class, 'create']);
+Route::post('/status-iot/store',  [App\Http\Controllers\StatusIotController::class, 'store']);
+Route::get('/status-iot/{id}/edit',  [App\Http\Controllers\StatusIotController::class, 'edit']);
+Route::put('/status-iot/{id}/update',  [App\Http\Controllers\StatusIotController::class, 'update']);
+Route::delete('/status-iot/{id}/destroy',  [App\Http\Controllers\StatusIotController::class, 'destroy']);
